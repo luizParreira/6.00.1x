@@ -20,9 +20,7 @@ def alphabetical_substring(s):
     biggest = s[0]
     statement = True
     while statement:
-        
-        if s[idx - 1] <= s[idx]:
-            
+        if s[idx - 1] <= s[idx]:  
             if len(s[i : idx +1]) > len(biggest):
                 biggest = s[i : idx+1]
             idx += 1
