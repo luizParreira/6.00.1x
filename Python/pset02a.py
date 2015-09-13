@@ -37,10 +37,12 @@ def calculate_pay(b, air, mpr):
         previous_balance = current_balance
     print 'Total paid: ' + str(round(total_paid, 2))
     print 'Remaining balance: ' + str(round(current_balance, 2))
+
     
-    
-calculate_pay(4213, 0.2, 0.04)
+balance = 3329
+annualInterestRate = 0.2
+calculate_pay(balance, annualInterestRate, annualInterestRate / 12.0)
 print "\n*********\n"
-calculate_pay(4842 , 0.2, 0.04)
+#calculate_pay(4842 , 0.2, 0.04)
 
         
