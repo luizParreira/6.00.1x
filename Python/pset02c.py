@@ -25,7 +25,7 @@ def lowPayBisectSearch(balance, air):
     
     # lower bound
     lower = balance / 12.0  
-    
+
     # epsilon to be tested against
     epsilon = 0.01
     
@@ -52,9 +52,6 @@ def lowPayBisectSearch(balance, air):
         payment = (upper + lower) / 2.0
         total_balance = payment * 12
         # original_balance = current_balance 
-
-        print "current balance " + str(current_balance)
-
     return round(payment, 2)
 
 def check_balance(current, payment, mir):
@@ -71,6 +68,6 @@ def check_balance(current, payment, mir):
 # annualInterestRate = 0.2
 
 # test case 2
-balance = 999999
-annualInterestRate = 0.18
+# balance = 999999
+# annualInterestRate = 0.18
 print str(lowPayBisectSearch(balance, annualInterestRate))
