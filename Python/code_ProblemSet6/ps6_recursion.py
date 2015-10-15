@@ -15,7 +15,15 @@ def reverseString(aStr):
     aStr: a string
     returns: a reversed string
     """
-    ### TODO.
+    
+    if aStr == "":   
+        print aStr
+        return aStr
+    return reverseString(aStr[1:]) + aStr[0]
+
+
+#print 'abc'[:-1]
+print reverseString('abc')
 
 #
 # Problem 4: X-ian
@@ -36,8 +44,21 @@ def x_ian(x, word):
     word: a string
     returns: True if word is x_ian, False otherwise
     """
-    ###TODO.
 
+    if (x or word) == "":
+        return False
+    if not x[0] in word :
+        return False
+    if len(x) == 1:
+        return True
+    if word.find(x[0]) > word.find(x[1]):
+        return False
+    return x_ian(x[1:], word)
+    
+print x_ian('eric', 'meritocracy')
+print x_ian('eric', 'cerium')
+print x_ian('john', 'mahjong')
+print
 #
 # Problem 5: Typewriter
 #
@@ -53,3 +74,10 @@ def insertNewlines(text, lineLength):
     returns: a string, with newline characters inserted appropriately. 
     """
     ### TODO.
+    #print text
+    if text == "": return ""
+    if lineLength == 0: return text
+    return  ' '.join(text.split(' ')[:lineLength]) +"\n" + insertNewlines(' '.join(text.split(' ')[lineLength:]), lineLength )
+  
+    
+print insertNewlines("Jack Florey is a mythical character created on the spur of a moment to help cover an insufficiently planned hack. He has been registered for classes at MIT twice before, but has reportedly never passed a class. It has been the tradition of the residents of East Campus to become Jack Florey for a few nights each year to educate incoming students in the ways, means, and ethics of hacking.", 5)
